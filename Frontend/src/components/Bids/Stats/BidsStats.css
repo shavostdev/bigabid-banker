@@ -1,0 +1,26 @@
+.bids-stats {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+.bids-stats h2 {
+  color: #fff;
+}
+.bids-stats .stats {
+  display: flex;
+  flex-direction: column;
+}
+.bids-stats .stats span {
+  color: #fff;
+  font-size: 1.3em;
+  margin-bottom: 20px;
+}
+.bids-stats .stats .wins {
+  color: rgb(17, 184, 17);
+}
+.bids-stats .stats .loses {
+  color: rgb(230, 36, 29);
+}
+.bids-stats .stats .errors {
+  color: rgb(230, 150, 29);
+}

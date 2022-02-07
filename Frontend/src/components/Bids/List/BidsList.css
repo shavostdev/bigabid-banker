@@ -1,0 +1,33 @@
+.bids-list {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+.bids-list h2 {
+  color: #fff;
+}
+
+.table {
+  color: #fff;
+  margin-top: 20px;
+}
+.table .tr,
+.table div[role="rowgroup"] .tr {
+  width: 100% !important;
+}
+.table .tr .th,
+.table div[role="rowgroup"] .tr .td {
+  text-align: center !important;
+  width: calc(100% / 2.7) !important;
+  white-space: nowrap;
+  margin-right: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bids-list .no-data {
+  color: #fff;
+  font-size: 1.2em;
+  margin: 20px 0;
+}
