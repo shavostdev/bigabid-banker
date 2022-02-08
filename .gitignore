@@ -1,0 +1,7 @@
+node_modules
+dist
+dist-ssr
+*.local
+./Backend/node_modules
+./Frontend/node_modules
+./Seeder/node_modules
