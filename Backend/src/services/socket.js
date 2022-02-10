@@ -3,7 +3,9 @@ module.exports = function socket(server) {
   const constans = require("../constans");
   const redisClient = require("../services/cacheManager");
   const subscriber = redisClient.duplicate();
-  subscriber.subscribe("__keyevent@0__:set");
+  subscriber.psubscribe("__keyevent@0__:set", function (error, count) {
+    console.log(error);
+  });
   const io = require("socket.io")(server, constans.socketOptions);
   io.on("connection", onConnect);
   let selectedCampaign = "";
@@ -16,7 +18,7 @@ module.exports = function socket(server) {
       socket.join(room);
     });
 
-    subscriber.on("message", async function (channel, key) {
+    subscriber.on("pmessage", async function (channel, pattern, key) {
       try {
         if (!selectedCampaign) return;
         const value = await redisClient.getAsync(key);
